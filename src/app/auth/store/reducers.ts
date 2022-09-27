@@ -4,7 +4,7 @@ import {
   registerFailureAction,
   registerSuccessAction,
 } from './actions/register.action';
-import AuthState from '../models/auth-state';
+import AuthState from '../models/authState';
 import {
   loginAction,
   loginSuccessAction,
@@ -103,6 +103,6 @@ const authReducer = createReducer(
   )
 );
 
-export function reducers(state: AuthState, action: Action) {
+export function reducers(state: AuthState, action: Action): AuthState {
   return authReducer(state, action);
 }

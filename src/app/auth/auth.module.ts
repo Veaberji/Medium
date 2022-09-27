@@ -8,9 +8,9 @@ import { reducers } from './store/reducers';
 import RegisterEffect from './store/effects/register.effect';
 import LoginEffect from './store/effects/login.effect';
 import GetCurrentUserEffect from './store/effects/getCurrentUser.effect';
-import { BackendErrorMessagesModule } from '../shared/models/modules/backendErrorMessages/backend-error-messages.module';
+import { BackendErrorMessagesModule } from '../shared/modules/backendErrorMessages/backend-error-messages.module';
+import { AuthRoutingModule } from './auth-routing.module';
 import { AuthService } from './services/auth.service';
-import { PersistanceService } from '../shared/services/persistance.service';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 
@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
   imports: [
     CommonModule,
     RouterModule,
+    AuthRoutingModule,
     ReactiveFormsModule,
     StoreModule.forFeature('auth', reducers),
     EffectsModule.forFeature([
@@ -29,6 +30,6 @@ import { LoginComponent } from './components/login/login.component';
     BackendErrorMessagesModule,
   ],
   exports: [RegisterComponent, LoginComponent],
-  providers: [AuthService, PersistanceService],
+  providers: [AuthService],
 })
 export class AuthModule {}

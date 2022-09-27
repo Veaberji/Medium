@@ -1,30 +1,30 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
-import AuthState from '../models/auth-state';
+import AuthState from '../models/authState';
 
 export const authFeatureSelector = createFeatureSelector<AuthState>('auth');
 
 export const isSubmittingSelector = createSelector(
   authFeatureSelector,
-  (authState: AuthState) => authState.isSubmitting
+  (state: AuthState) => state.isSubmitting
 );
 
 export const errorsSelector = createSelector(
   authFeatureSelector,
-  (authState: AuthState) => authState.validationErrors
+  (state: AuthState) => state.validationErrors
 );
 
 export const isLoggedInSelector = createSelector(
   authFeatureSelector,
-  (authState: AuthState) => authState.isLoggedIn
+  (state: AuthState) => state.isLoggedIn
 );
 
 export const isAnonymousSelector = createSelector(
   authFeatureSelector,
-  (authState: AuthState) => authState.isLoggedIn === false
+  (state: AuthState) => state.isLoggedIn === false
 );
 
 export const currentUserSelector = createSelector(
   authFeatureSelector,
-  (authState: AuthState) => authState.currentUser
+  (state: AuthState) => state.currentUser
 );

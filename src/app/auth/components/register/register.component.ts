@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import AuthState from '../../models/auth-state';
+import AuthState from '../../models/authState';
 import { registerAction } from '../../store/actions/register.action';
 import { errorsSelector, isSubmittingSelector } from '../../store/selectors';
 import RegisterRequest from '../../models/registerRequest';
@@ -11,7 +11,6 @@ import BackendErrors from 'src/app/shared/models/backendErrors';
 @Component({
   selector: 'med-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({});

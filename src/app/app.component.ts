@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import AuthState from './auth/models/auth-state';
+import AuthState from './auth/models/authState';
 import { getCurrentUserAction } from './auth/store/actions/getCurrentUser.action';
 
 @Component({

@@ -8,7 +8,7 @@ export class PersistanceService {
     try {
       localStorage.setItem(key, JSON.stringify(data));
     } catch (error) {
-      console.log('PersistanceService set error', error);
+      console.log('PersistanceService set error');
     }
   }
 
@@ -16,7 +16,7 @@ export class PersistanceService {
     try {
       return JSON.parse(localStorage.getItem(key) ?? 'Not found');
     } catch (error) {
-      console.log('PersistanceService get error', error);
+      console.log('PersistanceService get error');
       return null;
     }
   }

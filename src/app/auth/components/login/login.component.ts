@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import AuthState from '../../models/auth-state';
+import AuthState from '../../models/authState';
 import { errorsSelector, isSubmittingSelector } from '../../store/selectors';
 import { loginAction } from '../../store/actions/login.action';
 import BackendErrors from 'src/app/shared/models/backendErrors';
@@ -11,7 +11,6 @@ import LoginRequest from '../../models/loginRequest';
 @Component({
   selector: 'med-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   form: FormGroup = new FormGroup({});

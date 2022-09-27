@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import AuthState from 'src/app/auth/models/auth-state';
+import AuthState from 'src/app/auth/models/authState';
 import {
   currentUserSelector,
   isAnonymousSelector,
