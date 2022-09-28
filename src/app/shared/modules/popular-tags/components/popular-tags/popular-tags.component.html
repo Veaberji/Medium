@@ -1,0 +1,17 @@
+<med-loading *ngIf="isLoading$ | async"></med-loading>
+<med-error-message
+  *ngIf="error$ | async as error"
+  [message]="error"
+></med-error-message>
+<div class="sidebar" *ngIf="popularTags$ | async as tags">
+  <p>Popular Tags</p>
+  <div class="tag-list">
+    <a
+      *ngFor="let tag of tags"
+      [routerLink]="['/tag', tag]"
+      class="tag-default tag-pill"
+    >
+      {{ tag }}
+    </a>
+  </div>
+</div>

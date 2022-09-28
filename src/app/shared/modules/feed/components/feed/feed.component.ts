@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,7 +22,7 @@ import {
   selector: 'med-feed',
   templateUrl: './feed.component.html',
 })
-export class FeedComponent implements OnInit {
+export class FeedComponent implements OnInit, OnChanges {
   readonly limit: number = 1;
   baseUrl!: string;
   currentPage!: number;
@@ -35,7 +41,13 @@ export class FeedComponent implements OnInit {
     this.initValues();
   }
 
-  private initValues() {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['apiUrl'] && !changes['apiUrl'].firstChange) {
+      this.fetchFeed();
+    }
+  }
+
+  private initValues(): void {
     this.baseUrl = this.router.url.split('?')[0];
 
     this.route.queryParams.subscribe((p) => {
@@ -48,10 +60,9 @@ export class FeedComponent implements OnInit {
     this.error$ = this.store.pipe(select(errorsSelector));
   }
 
-  private fetchFeed() {
+  private fetchFeed(): void {
     const offset = this.currentPage * this.limit - this.limit;
     const parsedUrl = parseUrl(this.apiUrl);
-    console.log(parsedUrl);
 
     const query = stringify({ limit: this.limit, offset, ...parsedUrl.query });
     const url = `${parsedUrl.url}?${query}`;

@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
+import { YourFeedModule } from './your-feed/your-feed.module';
+import { TagFeedModule } from './tag-feed/tag-feed.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -29,6 +31,8 @@ import { AppComponent } from './app.component';
     }),
     TopBarModule,
     GlobalFeedModule,
+    YourFeedModule,
+    TagFeedModule,
     StoreRouterConnectingModule.forRoot(),
   ],
   providers: [

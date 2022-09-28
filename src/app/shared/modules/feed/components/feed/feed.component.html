@@ -21,9 +21,7 @@
     <a [routerLink]="['/articles', article.slug]" class="preview-link">
       <h1>{{ article.title }}</h1>
       <p>{{ article.description }}</p>
-      <p>
-        Tags: <span *ngFor="let tag of article.tagList">{{ tag }} </span>
-      </p>
+      <med-tag-list [tags]="article.tagList"> </med-tag-list>
     </a>
   </div>
   <med-paging
