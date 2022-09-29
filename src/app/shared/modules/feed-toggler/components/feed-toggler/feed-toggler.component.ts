@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import AuthState from 'src/app/auth/models/authState';
 import { isLoggedInSelector } from 'src/app/auth/store/selectors';
 
 @Component({
@@ -12,7 +11,7 @@ export class FeedTogglerComponent implements OnInit {
   @Input() tag: string | null = null;
   isLoggedIn$!: Observable<boolean | null>;
 
-  constructor(private store: Store<AuthState>) {}
+  constructor(private store: Store) {}
   ngOnInit(): void {
     this.initValues();
   }

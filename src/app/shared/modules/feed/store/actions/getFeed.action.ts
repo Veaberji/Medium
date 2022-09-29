@@ -11,4 +11,5 @@ export const getFeedSuccessAction = createAction(
   ActionTypes.GetFeedSuccess,
   props<{ feed: GetFeedResponse }>()
 );
+
 export const getFeedFailureAction = createAction(ActionTypes.GetFeedFailure);

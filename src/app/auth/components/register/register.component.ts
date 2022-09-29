@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import AuthState from '../../models/authState';
 import { registerAction } from '../../store/actions/register.action';
 import { errorsSelector, isSubmittingSelector } from '../../store/selectors';
 import RegisterRequest from '../../models/registerRequest';
@@ -17,7 +16,7 @@ export class RegisterComponent implements OnInit {
   isSubmitting$: Observable<boolean> = new Observable();
   errors$: Observable<BackendErrors | null> = new Observable();
 
-  constructor(private fb: FormBuilder, private store: Store<AuthState>) {}
+  constructor(private fb: FormBuilder, private store: Store) {}
 
   ngOnInit(): void {
     this.initForm();

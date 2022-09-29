@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import AuthState from '../../models/authState';
 import { errorsSelector, isSubmittingSelector } from '../../store/selectors';
 import { loginAction } from '../../store/actions/login.action';
 import BackendErrors from 'src/app/shared/models/backendErrors';
@@ -17,7 +16,7 @@ export class LoginComponent implements OnInit {
   isSubmitting$: Observable<boolean> = new Observable();
   errors$: Observable<BackendErrors | null> = new Observable();
 
-  constructor(private fb: FormBuilder, private store: Store<AuthState>) {}
+  constructor(private fb: FormBuilder, private store: Store) {}
 
   ngOnInit(): void {
     this.initForm();

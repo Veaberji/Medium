@@ -11,7 +11,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { parseUrl, stringify } from 'query-string';
 import { getFeedAction } from './../../store/actions/getFeed.action';
 import GetFeedResponse from '../../models/getFeedResponse';
-import FeedState from './../../models/feedState';
 import {
   errorsSelector,
   feedSelector,
@@ -32,7 +31,7 @@ export class FeedComponent implements OnInit, OnChanges {
   @Input() apiUrl!: string;
 
   constructor(
-    private store: Store<FeedState>,
+    private store: Store,
     private router: Router,
     private route: ActivatedRoute
   ) {}

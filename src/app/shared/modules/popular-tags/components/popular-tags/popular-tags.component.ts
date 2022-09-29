@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { getPopularTagsAction } from '../../store/actions/get-popular-tags.action';
-import PopularTagsState from './../../models/popular-tags-state';
 import { Observable } from 'rxjs';
 import { errorsSelector, isLoadingSelector } from '../../store/selectors';
 import { popularTagsSelector } from './../../store/selectors';
@@ -15,7 +14,7 @@ export class PopularTagsComponent implements OnInit {
   popularTags$!: Observable<string[] | null>;
   error$!: Observable<string | null>;
 
-  constructor(private store: Store<PopularTagsState>) {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.initValues();
