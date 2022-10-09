@@ -4,8 +4,9 @@ import { select, Store } from '@ngrx/store';
 import { combineLatest, Observable, of, switchMap } from 'rxjs';
 import { currentUserSelector } from 'src/app/auth/store/selectors';
 import Article from 'src/app/shared/models/article';
-import ArticleState from '../../models/articleState';
-import { getArticleAction } from '../../store/actions/getArticle.action';
+import ArticleState from '../../models/article-state';
+import { deleteArticleAction } from '../../store/actions/delete-article.action';
+import { getArticleAction } from '../../store/actions/get-article.action';
 import {
   articleSelector,
   errorsSelector,
@@ -17,7 +18,7 @@ import {
   templateUrl: './article.component.html',
 })
 export class ArticleComponent implements OnInit {
-  private title!: string;
+  private slug!: string;
   isLoading$!: Observable<boolean>;
   article$!: Observable<Article | null>;
   error$!: Observable<string | null>;
@@ -30,8 +31,12 @@ export class ArticleComponent implements OnInit {
     this.fetchFeed();
   }
 
+  onDeleteArticle(): void {
+    this.store.dispatch(deleteArticleAction({ slug: this.slug }));
+  }
+
   private initValues(): void {
-    this.title = this.route.snapshot.paramMap.get('title') ?? '';
+    this.slug = this.route.snapshot.paramMap.get('slug') ?? '';
 
     this.isLoading$ = this.store.pipe(select(isLoadingSelector));
     this.article$ = this.store.pipe(select(articleSelector));
@@ -47,6 +52,6 @@ export class ArticleComponent implements OnInit {
   }
 
   private fetchFeed(): void {
-    this.store.dispatch(getArticleAction({ title: this.title }));
+    this.store.dispatch(getArticleAction({ slug: this.slug }));
   }
 }

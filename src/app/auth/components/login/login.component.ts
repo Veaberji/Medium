@@ -4,8 +4,8 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { errorsSelector, isSubmittingSelector } from '../../store/selectors';
 import { loginAction } from '../../store/actions/login.action';
-import BackendErrors from 'src/app/shared/models/backendErrors';
-import LoginRequest from '../../models/loginRequest';
+import BackendErrors from 'src/app/shared/models/backend-errors';
+import LoginRequest from '../../models/login-request';
 
 @Component({
   selector: 'med-login',

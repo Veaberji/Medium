@@ -4,7 +4,7 @@ import {
   registerFailureAction,
   registerSuccessAction,
 } from './actions/register.action';
-import AuthState from '../models/authState';
+import AuthState from '../models/auth-state';
 import {
   loginAction,
   loginSuccessAction,

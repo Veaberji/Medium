@@ -1,5 +1,5 @@
-import BackendErrors from 'src/app/shared/models/backendErrors';
-import CurrentUser from 'src/app/shared/models/currentUser';
+import BackendErrors from 'src/app/shared/models/backend-errors';
+import CurrentUser from 'src/app/shared/models/current-user';
 
 export default interface AuthState {
   isSubmitting: boolean;

@@ -1,11 +1,11 @@
-import FeedState from '../models/feedState';
+import FeedState from '../models/feed-state';
 import { Action, createReducer, on } from '@ngrx/store';
 import { routerNavigationAction } from '@ngrx/router-store';
 import {
   getFeedAction,
   getFeedFailureAction,
   getFeedSuccessAction,
-} from './actions/getFeed.action';
+} from './actions/get-feed.action';
 
 const initialState: FeedState = {
   isLoading: false,

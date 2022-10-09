@@ -1,0 +1,5 @@
+<med-article-form
+  [isSubmitting]="!!(isSubmitting$ | async)"
+  [errors]="errors$ | async"
+  (articleSubmitEvent)="onSubmit($event)"
+></med-article-form>

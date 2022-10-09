@@ -4,8 +4,8 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { registerAction } from '../../store/actions/register.action';
 import { errorsSelector, isSubmittingSelector } from '../../store/selectors';
-import RegisterRequest from '../../models/registerRequest';
-import BackendErrors from 'src/app/shared/models/backendErrors';
+import RegisterRequest from '../../models/register-request';
+import BackendErrors from 'src/app/shared/models/backend-errors';
 
 @Component({
   selector: 'med-register',

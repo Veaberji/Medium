@@ -4,7 +4,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
 import { reducers } from './store/reducers';
-import GetFeedEffect from './store/effects/getFeed.effect';
+import GetFeedEffect from './store/effects/get-feed.effect';
 import { FeedService } from './services/feed.service';
 import { ErrorMessageModule } from '../error-message/error-message.module';
 import { LoadingModule } from '../loading/loading.module';

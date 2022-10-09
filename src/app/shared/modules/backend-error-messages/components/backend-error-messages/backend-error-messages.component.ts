@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import BackendErrors from 'src/app/shared/models/backendErrors';
+import BackendErrors from 'src/app/shared/models/backend-errors';
 
 @Component({
   selector: 'med-backend-error-messages',

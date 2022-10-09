@@ -6,7 +6,7 @@ import {
   isAnonymousSelector,
   isLoggedInSelector,
 } from 'src/app/auth/store/selectors';
-import CurrentUser from 'src/app/shared/models/currentUser';
+import CurrentUser from 'src/app/shared/models/current-user';
 
 @Component({
   selector: 'med-top-bar',

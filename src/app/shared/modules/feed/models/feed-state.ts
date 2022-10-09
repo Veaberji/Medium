@@ -1,4 +1,4 @@
-import GetFeedResponse from './getFeedResponse';
+import GetFeedResponse from './get-feed-response';
 
 export default interface FeedState {
   isLoading: boolean;

@@ -5,9 +5,9 @@ import {
   getFeedAction,
   getFeedFailureAction,
   getFeedSuccessAction,
-} from './../actions/getFeed.action';
+} from '../actions/get-feed.action';
 import { FeedService } from '../../services/feed.service';
-import GetFeedResponse from './../../models/getFeedResponse';
+import GetFeedResponse from '../../models/get-feed-response';
 
 @Injectable()
 export default class GetFeedEffect {

@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 
-import BackendErrors from 'src/app/shared/models/backendErrors';
-import CurrentUser from 'src/app/shared/models/currentUser';
-import RegisterRequest from '../../models/registerRequest';
-import { ActionType } from '../actionTypes';
+import BackendErrors from 'src/app/shared/models/backend-errors';
+import CurrentUser from 'src/app/shared/models/current-user';
+import RegisterRequest from '../../models/register-request';
+import { ActionType } from '../action-types';
 
 export const registerAction = createAction(
   ActionType.Register,

@@ -2,10 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import CurrentUser from 'src/app/shared/models/currentUser';
-import LoginRequest from '../models/loginRequest';
-import RegisterRequest from '../models/registerRequest';
-import AuthResponse from './../models/authResponse';
+import CurrentUser from 'src/app/shared/models/current-user';
+import LoginRequest from '../models/login-request';
+import RegisterRequest from '../models/register-request';
+import AuthResponse from '../models/auth-response';
 
 @Injectable()
 export class AuthService {

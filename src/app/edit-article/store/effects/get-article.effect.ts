@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { HttpErrorResponse } from '@angular/common/http';
 import {
   getArticleAction,
   getArticleFailureAction,
   getArticleSuccessAction,
-} from '../actions/getArticle.action';
+} from '../actions/get-article.action';
 import { ArticleService } from 'src/app/shared/services/article.service';
 import Article from 'src/app/shared/models/article';
 
@@ -19,12 +20,12 @@ export default class GetArticleEffect {
   getArticle$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getArticleAction),
-      switchMap(({ title }) =>
-        this.articleService.getArticle(title).pipe(
-          map((article: Article) => {
-            return getArticleSuccessAction({ article });
-          }),
-          catchError(() => of(getArticleFailureAction()))
+      switchMap(({ slug }) =>
+        this.articleService.getArticle(slug).pipe(
+          map((article: Article) => getArticleSuccessAction({ article })),
+          catchError((response: HttpErrorResponse) =>
+            of(getArticleFailureAction({ errors: response.error.errors }))
+          )
         )
       )
     )

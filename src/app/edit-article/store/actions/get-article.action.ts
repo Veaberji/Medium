@@ -1,10 +1,11 @@
 import { createAction, props } from '@ngrx/store';
+import { ActionTypes } from '../action-types';
+import BackendErrors from 'src/app/shared/models/backend-errors';
 import Article from 'src/app/shared/models/article';
-import { ActionTypes } from '../actionTypes';
 
 export const getArticleAction = createAction(
   ActionTypes.GetArticle,
-  props<{ title: string }>()
+  props<{ slug: string }>()
 );
 
 export const getArticleSuccessAction = createAction(
@@ -13,5 +14,6 @@ export const getArticleSuccessAction = createAction(
 );
 
 export const getArticleFailureAction = createAction(
-  ActionTypes.GetArticleFailure
+  ActionTypes.GetArticleFailure,
+  props<{ errors: BackendErrors }>()
 );

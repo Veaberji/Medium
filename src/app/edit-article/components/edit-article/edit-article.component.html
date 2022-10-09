@@ -1,0 +1,8 @@
+<med-loading *ngIf="isLoading$ | async"></med-loading>
+<med-article-form
+  *ngIf="initialValues$ | async"
+  [isSubmitting]="!!(isSubmitting$ | async)"
+  [initialValues]="initialValues$ | async"
+  [errors]="errors$ | async"
+  (articleSubmitEvent)="onSubmit($event)"
+></med-article-form>

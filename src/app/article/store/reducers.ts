@@ -4,8 +4,8 @@ import {
   getArticleAction,
   getArticleFailureAction,
   getArticleSuccessAction,
-} from './actions/getArticle.action';
-import ArticleState from '../models/articleState';
+} from './actions/get-article.action';
+import ArticleState from '../models/article-state';
 
 const initialState: ArticleState = {
   isLoading: false,

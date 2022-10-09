@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ActionType } from '../actionTypes';
+import { ActionType } from '../action-types';
 
 export const getPopularTagsAction = createAction(ActionType.GetPopularTags);
 

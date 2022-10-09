@@ -9,8 +9,8 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { parseUrl, stringify } from 'query-string';
-import { getFeedAction } from './../../store/actions/getFeed.action';
-import GetFeedResponse from '../../models/getFeedResponse';
+import { getFeedAction } from '../../store/actions/get-feed.action';
+import GetFeedResponse from '../../models/get-feed-response';
 import {
   errorsSelector,
   feedSelector,
@@ -22,7 +22,7 @@ import {
   templateUrl: './feed.component.html',
 })
 export class FeedComponent implements OnInit, OnChanges {
-  readonly limit: number = 1;
+  readonly limit: number = 10;
   baseUrl!: string;
   currentPage!: number;
   isLoading$!: Observable<boolean>;
