@@ -1,6 +1,6 @@
 # Medium
 
-This project is a UI copy of the `https://angular.realworld.io` project. Angular 14 and NGRX 14 ware used.
+This project is a UI copy of the `https://angular.realworld.io` project. Angular 14 and NGRX 14 were used.
 
 ## Run Project
 
