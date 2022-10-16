@@ -8,6 +8,8 @@ import { reducers } from './store/reducers';
 import RegisterEffect from './store/effects/register.effect';
 import LoginEffect from './store/effects/login.effect';
 import GetCurrentUserEffect from './store/effects/get-current-user.effect';
+import UpdateCurrentUserEffect from './store/effects/update-current-user.effect';
+import LogoutEffect from './store/effects/logout.effect';
 import { AuthRoutingModule } from './auth-routing.module';
 import { BackendErrorMessagesModule } from '../shared/modules/backend-error-messages/backend-error-messages.module';
 import { AuthService } from './services/auth.service';
@@ -25,7 +27,9 @@ import { LoginComponent } from './components/login/login.component';
     EffectsModule.forFeature([
       RegisterEffect,
       LoginEffect,
+      LogoutEffect,
       GetCurrentUserEffect,
+      UpdateCurrentUserEffect,
     ]),
     BackendErrorMessagesModule,
   ],

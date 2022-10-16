@@ -6,6 +6,7 @@ import CurrentUser from 'src/app/shared/models/current-user';
 import LoginRequest from '../models/login-request';
 import RegisterRequest from '../models/register-request';
 import AuthResponse from '../models/auth-response';
+import UserInput from 'src/app/shared/models/user-input';
 
 @Injectable()
 export class AuthService {
@@ -28,6 +29,14 @@ export class AuthService {
     const url = `${this.baseUrl}/user`;
 
     return this.http.get<AuthResponse>(url).pipe(map(this.getUser));
+  }
+
+  updateCurrentUser(currentUserInput: UserInput): Observable<CurrentUser> {
+    const url = `${this.baseUrl}/user`;
+
+    return this.http
+      .put<AuthResponse>(url, { user: currentUserInput })
+      .pipe(map(this.getUser));
   }
 
   private getUser(response: AuthResponse): CurrentUser {

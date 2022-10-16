@@ -11,12 +11,18 @@
         <img [src]="article.author.image" [alt]="article.author.username" />
       </a>
       <div class="info">
-        <a [routerLink]="['/profiles', article.author.username]">
+        <a class="author" [routerLink]="['/profiles', article.author.username]">
           {{ article.author.username }}
         </a>
-        <span class="date">{{ article.createdAt }}</span>
+        <span class="date">{{ article.createdAt | date: 'longDate' }}</span>
       </div>
-      <div class="pull-xs-right">Add to favorites</div>
+      <div class="pull-xs-right">
+        <med-add-to-favorites
+          [isFavorited]="article.favorited"
+          [favoritesCount]="article.favoritesCount"
+          [articleSlug]="article.slug"
+        ></med-add-to-favorites>
+      </div>
     </div>
     <a [routerLink]="['/articles', article.slug]" class="preview-link">
       <h1>{{ article.title }}</h1>

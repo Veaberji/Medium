@@ -4,7 +4,6 @@ import { select, Store } from '@ngrx/store';
 import { combineLatest, Observable, of, switchMap } from 'rxjs';
 import { currentUserSelector } from 'src/app/auth/store/selectors';
 import Article from 'src/app/shared/models/article';
-import ArticleState from '../../models/article-state';
 import { deleteArticleAction } from '../../store/actions/delete-article.action';
 import { getArticleAction } from '../../store/actions/get-article.action';
 import {

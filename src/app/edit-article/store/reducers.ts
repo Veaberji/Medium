@@ -10,7 +10,7 @@ import {
   getArticleSuccessAction,
   getArticleFailureAction,
 } from './actions/get-article.action';
-import { EditArticleState } from '../models/edit-article-state';
+import EditArticleState from '../models/edit-article-state';
 
 const initialState: EditArticleState = {
   isLoading: false,

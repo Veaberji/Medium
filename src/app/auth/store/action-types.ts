@@ -10,4 +10,10 @@ export enum ActionType {
   GetCurrentUser = '[Auth] Get current user',
   GetCurrentUserSuccess = '[Auth] Get current user success',
   GetCurrentUserFailure = '[Auth] Get current user failure',
+
+  UpdateCurrentUser = '[Auth] Update current user',
+  UpdateCurrentUserSuccess = '[Auth] Update current user success',
+  UpdateCurrentUserFailure = '[Auth] Update current user failure',
+
+  Logout = '[Auth] Logout',
 }

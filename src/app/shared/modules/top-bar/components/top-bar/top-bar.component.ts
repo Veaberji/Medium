@@ -11,7 +11,6 @@ import CurrentUser from 'src/app/shared/models/current-user';
 @Component({
   selector: 'med-top-bar',
   templateUrl: './top-bar.component.html',
-  styleUrls: ['./top-bar.component.scss'],
 })
 export class TopBarComponent implements OnInit {
   isLoggedIn$!: Observable<boolean | null>;

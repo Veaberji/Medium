@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { EditArticleState } from '../models/edit-article-state';
+import EditArticleState from '../models/edit-article-state';
 
 export const editArticleFeatureSelector =
   createFeatureSelector<EditArticleState>('editArticle');

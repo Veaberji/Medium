@@ -5,7 +5,7 @@ import {
   createArticleFailureAction,
   createArticleSuccessAction,
 } from './actions/create-article.action';
-import { CreateArticleState } from '../models/create-article-state';
+import CreateArticleState from '../models/create-article-state';
 
 const initialState: CreateArticleState = {
   isSubmitting: false,
